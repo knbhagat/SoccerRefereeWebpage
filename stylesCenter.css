@@ -1,0 +1,292 @@
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: lightgrey;
+  }
+
+  .Whistle-Text {
+    position: relative;
+    font-family: "Comic Sans MS";
+    font-size: larger;
+    font-weight: 800;
+    top: -200px;
+    left: -350px;
+  }
+  .referee {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: calc(50% - 350px); /* half width - more width */
+  }
+  
+  #head {
+    width: 100px;
+    height: 100px;
+    background-color: #F2C100;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  #body {
+    width: 120px;
+    height: 240px;
+    background-color: black;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  #left-arm,
+  #right-arm {
+    position: absolute;
+    width: 40px;
+    height: 160px;
+    background-color: black;
+    top: 60px;
+  }
+  
+  #right-arm {
+    left: -50px;
+    border-radius: 20px 0 0 20px;
+    transform-origin: top; /* Set the rotation origin to the top */
+    transition: transform 1s ease; /* Add transition for smooth animation */
+  }
+  
+  #left-arm {
+    right: -50px;
+    border-radius: 0 20px 20px 0;
+    transition: transform 1s ease;
+    transform-origin: top;
+  }
+  
+  #legs {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 200px;
+    left: 0;
+  }
+  
+  #left-leg,
+  #right-leg {
+    width: 40px;
+    height: 60px;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  #left-leg {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+  }
+  
+  #right-leg {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+  
+  #shoes {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 320px;
+    left: 0;
+  }
+  
+  #left-shoe,
+  #right-shoe {
+    width: 40px;
+    height: 20px;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  #left-shoe {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+  }
+  
+  #right-shoe {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+
+  #whistle {
+    position: absolute;
+    top: 60px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 10px;
+    background-color: #f3efef;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  #whistle.shake-animation {
+    animation-name: whistleShake;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  #whistle:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: #0e0e0e;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  #whistle:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 60px;
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+    z-index: 2;
+  }
+  
+  #whistle:before,
+  #whistle:after {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  #whistle:before {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes whistleShake {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    10% {
+      transform: translateX(-50%) rotate(-15deg);
+    }
+    20% {
+      transform: translateX(-50%) rotate(15deg);
+    }
+    30% {
+      transform: translateX(-50%) rotate(-15deg);
+    }
+    40% {
+      transform: translateX(-50%) rotate(15deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(-15deg);
+    }
+    60% {
+      transform: translateX(-50%) rotate(15deg);
+    }
+    70% {
+      transform: translateX(-50%) rotate(-15deg);
+    }
+    80% {
+      transform: translateX(-50%) rotate(15deg);
+    }
+    90% {
+      transform: translateX(-50%) rotate(-15deg);
+    }
+    100% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+  }
+
+    #buttonContainer {
+        position: absolute;
+        top: -130px;
+        left: 160px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      h1 {
+        position:absolute;
+        background-color: #222;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #555;
+        top: -300px;
+        left: 100px;
+        width: 400px;
+      }
+      
+      .button {
+        width: 300px;
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+      }
+      
+      button:active {
+        transform: scale(0.95);
+      }
+
+      #optionContainer {
+        position:absolute;
+        left: -25px;
+        top: 400px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .startButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: 600;
+        font-family:sans-serif;
+        color: #040404;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .startButton:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+      }
+    
+      .startButton:active {
+        transform: scale(0.95);
+      }
