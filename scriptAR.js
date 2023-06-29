@@ -6,6 +6,9 @@ const leftHand = document.querySelector(".left-arm");
 const buttonOrigin = buttonCont.innerHTML; //saves the origin html of the initial buttons
 let animationProgress = false;
 
+function goBack() {
+    history.go(0);
+}
 function rightHand90() {
     if (animationProgress) {
         return;
@@ -109,29 +112,19 @@ function middleSide() {
 
 function offsideButtons() {
     buttonCont.innerHTML = '';
+    const backButton = document.getElementById("goBack");
+    buttonCont.style.marginTop = "-80px";
+    backButton.removeAttribute("href");
     buttonCont.appendChild(createNewButton('nearSide', 'Near-Side', 'button'));
     buttonCont.appendChild(createNewButton('middleSide', 'Middle', 'button'));
     buttonCont.appendChild(createNewButton('farSide', 'Far-Side', 'button'));
     const nearSideButton = document.getElementById('nearSide');
     const middleButton = document.getElementById('middleSide');
     const farSideButton = document.getElementById('farSide');
-    nearSideButton.addEventListener("click", () => {
-        nearSide();
-        buttonCont.innerHTML = buttonOrigin; //change back to previous set of buttons
-        attachEventListeners();
-    });
-
-    farSideButton.addEventListener("click", () => {
-        farSide();
-        buttonCont.innerHTML = buttonOrigin;
-        attachEventListeners();
-    });
-
-    middleButton.addEventListener("click", () => {
-        middleSide();
-        buttonCont.innerHTML = buttonOrigin;
-        attachEventListeners();
-    });
+    nearSideButton.addEventListener("click", nearSide);
+    farSideButton.addEventListener("click", farSide);
+    middleButton.addEventListener("click", middleSide);
+    backButton.addEventListener("click", goBack);
 }
 
 function rightHandThrowIn() {
@@ -192,22 +185,17 @@ function leftHandThrowIn() {
 
 function throwinButtons() {
     buttonCont.innerHTML = '';
+    const backButton = document.getElementById("goBack");
+    buttonCont.style.marginTop = "-120px";
+    backButton.removeAttribute("href");
     buttonCont.appendChild(createNewButton('a-advantage', 'Attackers Advantage', 'button'));
     buttonCont.appendChild(createNewButton('d-advantage', 'Defenders Advantage', 'button'));
     const aAdvantage = document.getElementById('a-advantage');
     const dAdvantage = document.getElementById('d-advantage');
 
-    aAdvantage.addEventListener("click", () => {
-        rightHandThrowIn();
-        buttonCont.innerHTML = buttonOrigin;
-        attachEventListeners();
-    });
-
-    dAdvantage.addEventListener("click", () => {
-        leftHandThrowIn()
-        buttonCont.innerHTML = buttonOrigin;
-        attachEventListeners();
-    });
+    aAdvantage.addEventListener("click", rightHandThrowIn);
+    dAdvantage.addEventListener("click", leftHandThrowIn);
+    backButton.addEventListener("click", goBack);
 }
 
 function createNewButton(id, label, reference) {
@@ -282,22 +270,17 @@ function foulForDefender() {
 
 function foulButtons() {
     buttonCont.innerHTML = "";
+    const backButton = document.getElementById("goBack");
+    buttonCont.style.marginTop = "-120px";
     buttonCont.appendChild(createNewButton('a-advantage', "Attackers Advantage", "button"));
     buttonCont.appendChild(createNewButton("d-advantage", "Defenders Advantage", "button"));
     const aAdvantage = document.getElementById('a-advantage');
     const dAdvantage = document.getElementById('d-advantage');
+    backButton.removeAttribute("href");
 
-    aAdvantage.addEventListener("click", () => {
-        foulForAttacker();
-        buttonCont.innerHTML = buttonOrigin;
-        attachEventListeners();
-    });
-
-    dAdvantage.addEventListener("click", () => {
-        foulForDefender()
-        buttonCont.innerHTML = buttonOrigin;
-        attachEventListeners();
-    });
+    aAdvantage.addEventListener("click", foulForAttacker);
+    dAdvantage.addEventListener("click", foulForDefender);
+    backButton.addEventListener("click", goBack);
 }
 
 function substitution() {
