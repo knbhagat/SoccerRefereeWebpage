@@ -9,6 +9,7 @@ let animationProgress = false;
 function goBack() {
     history.go(0);
 }
+
 function rightHand90() {
     if (animationProgress) {
         return;

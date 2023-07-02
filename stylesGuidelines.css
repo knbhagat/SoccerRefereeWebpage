@@ -53,10 +53,12 @@ body {
   }
 
   .startButton {
-    width: 40px;
+    width: 30px; 
+    text-align: center;
     display: inline-block;
     padding: 12px 24px;
     font-size: 13px;
+    font-family:sans-serif;
     color: #040404;
     background-color: #4CAF50;
     border: none;
