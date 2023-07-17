@@ -2,6 +2,7 @@ const leftArm = document.getElementById("left-arm");
 const rightArm = document.getElementById("right-arm");
 const whistle = document.getElementById("whistle");
 const whistleText = document.getElementById("textForWhistle");
+const card = document.getElementById("card");
 let inMotion = false; //sees if another button is already in motion
 
 function backPage() {
@@ -44,9 +45,7 @@ function pickASide() {
     const left = document.getElementById("Left");
 
     document.getElementById("getBack").removeAttribute("href");
-    document.getElementById("getBack").addEventListener("click", () => {
-        backPage();
-    }); 
+    document.getElementById("getBack").addEventListener("click", backPage);
     right.addEventListener("click", cornerRight);
     left.addEventListener("click", cornerLeft);
 }
@@ -62,6 +61,8 @@ function advantage() {
     setTimeout(() => {
         leftArm.style.transform = "rotateX(0deg)";
         rightArm.style.transform = "rotateX(0deg)";
+        inMotion = false;
+        whistleText.innerText = "";
     }, 4000);
 }
 
@@ -199,6 +200,332 @@ function directFoul() {
     }, 6000); 
 }
 
+function directRed() {
+    if (inMotion) {
+        return;
+    }
+    inMotion = true
+
+    whistleText.innerText = "*Whistle*"
+    whistle.classList.add("shake-animation");
+
+    setTimeout(() => {
+        card.style.backgroundColor = "red"; //confirms card color is red
+        rightArm.style.zIndex = "-1";
+        whistle.classList.remove("shake-animation");
+        rightArm.style.transform = "rotateX(80deg)";
+        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from back-right pouch of shorts*"
+    }, 2000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-20deg)";
+        whistleText.innerText = "*Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
+    }, 5000);
+
+    setTimeout(() => {
+        card.style.visibility = "visible";
+    }, 6000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+    }, 7000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-10deg)";
+    }, 10000);
+
+    setTimeout(() => {
+        card.style.visibility = "hidden";
+    }, 11000);   
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(0deg)";
+        whistleText.innerText = "";
+        rightArm.style.zIndex = "0";
+        inMotion = false;
+    }, 13000); 
+}
+
+function directYellow() {
+    if (inMotion) {
+        return;
+    }
+    inMotion = true
+
+    whistleText.innerText = "*Whistle*"
+    whistle.classList.add("shake-animation");
+
+    setTimeout(() => {
+        card.style.backgroundColor = "yellow"; //confirms card color is yellow
+        whistle.classList.remove("shake-animation");
+        rightArm.style.transform = "rotateX(80deg)";
+        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from left pouch of uniform*"
+    }, 2000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-100deg)";
+        whistleText.innerText = "*Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct*"
+    }, 5000);
+
+    setTimeout(() => {
+        card.style.visibility = "visible";
+    }, 6000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+    }, 7000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-100deg)";
+    }, 10000);
+
+    setTimeout(() => {
+        card.style.visibility = "hidden";
+    }, 11000); 
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(0deg)";
+        whistleText.innerText = "";
+        inMotion = false;
+    }, 13000); 
+}
+
+function indirectRed() {
+    if (inMotion) {
+        return;
+    }
+    inMotion = true
+
+    whistleText.innerText = "*Whistle*"
+    whistle.classList.add("shake-animation");
+
+    setTimeout(() => {
+        card.style.backgroundColor = "red"; //confirms card color is red
+        rightArm.style.zIndex = "-1";
+        whistle.classList.remove("shake-animation");
+        rightArm.style.transform = "rotateX(80deg)";
+        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from back-right pouch of shorts*"
+    }, 2000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-20deg)";
+        whistleText.innerText = "*Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
+    }, 5000);
+
+    setTimeout(() => {
+        card.style.visibility = "visible";
+    }, 6000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+    }, 7000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-10deg)";
+    }, 9000);
+
+    setTimeout(() => {
+        card.style.visibility = "hidden";
+    }, 10000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+        whistleText.innerText = "*Raise Arm until the ball is touched by another player other than the kicker*"
+    }, 12000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(0deg)";
+        whistleText.innerText = "";
+        rightArm.style.zIndex = "0";
+        inMotion = false;
+    }, 15000);    
+}
+
+function indirectYellow() {
+    if (inMotion) {
+        return;
+    }
+    inMotion = true
+
+    whistleText.innerText = "*Whistle*"
+    whistle.classList.add("shake-animation");
+
+    setTimeout(() => {
+        card.style.backgroundColor = "yellow"; //confirms card color is yellow
+        whistle.classList.remove("shake-animation");
+        rightArm.style.transform = "rotateX(80deg)";
+        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from left pouch of uniform*"
+    }, 2000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-100deg)";
+        whistleText.innerText = "*Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct*"
+    }, 5000);
+
+    setTimeout(() => {
+        card.style.visibility = "visible";
+    }, 6000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+    }, 7000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-100deg)";
+    }, 9000);
+
+    setTimeout(() => {
+        card.style.visibility = "hidden";
+    }, 10000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+        whistleText.innerText = "*Raise Arm until the ball is touched by another player other than the kicker*"
+    }, 12000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(0deg)";
+        whistleText.innerText = "";
+        inMotion = false;
+    }, 13000);    
+}
+
+function cardSelection(indirectKick) {
+    document.getElementById("buttonContainer").innerHTML = "";
+    document.getElementById("buttonContainer").style.marginTop = "30px";
+    document.getElementById("buttonContainer").appendChild(createNewButton('NoCard', 'No Card', 'button'));
+    document.getElementById("buttonContainer").appendChild(createNewButton('Yellow', 'Yellow Card', 'button'));
+    document.getElementById("buttonContainer").appendChild(createNewButton('Red', 'Red Card', 'button'));
+    const noCard = document.getElementById('NoCard');
+    const yellowCard = document.getElementById('Yellow');
+    const redCard = document.getElementById('Red');
+
+    document.getElementById("getBack").removeAttribute("href");
+    document.getElementById("getBack").addEventListener("click", backPage);
+    noCard.addEventListener("click", () => {
+        if (indirectKick == null) {
+            penaltyKick();
+        }
+        else if (indirectKick) {
+            indirectFoul();
+        } else {
+            directFoul();
+        }
+    });
+
+    yellowCard.addEventListener("click", () => {
+        if (indirectKick == null) {
+            penaltyYellow();
+        }
+        else if (indirectKick) {
+            indirectYellow();
+        } else {
+            directYellow();
+        }
+    });
+
+    redCard.addEventListener("click", () => {
+        if (indirectKick == null) {
+            penaltyRed();
+        }
+        else if (indirectKick) {
+            indirectRed();
+        } else {
+            directRed();
+        }
+    });
+}
+
+function penaltyYellow() {
+    if (inMotion) {
+        return;
+    }
+    inMotion = true
+
+    whistleText.innerText = "*Whistle*"
+    whistle.classList.add("shake-animation");
+
+    setTimeout(() => {
+        card.style.backgroundColor = "yellow"; //confirms card color is yellow
+        whistle.classList.remove("shake-animation");
+        rightArm.style.transform = "rotateX(60deg)";
+        whistleText.innerText = "*Point towards the penalty marker, then take card from left pouch of uniform*"
+    }, 2000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-100deg)";
+        whistleText.innerText = "*Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct*"
+    }, 5000);
+
+    setTimeout(() => {
+        card.style.visibility = "visible";
+    }, 6000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+    }, 7000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-100deg)";
+    }, 9000);
+
+    setTimeout(() => {
+        card.style.visibility = "hidden";
+    }, 10000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(0deg)";
+        whistleText.innerText = "";
+        inMotion = false;
+    }, 12000);    
+}
+
+function penaltyRed() {
+    if (inMotion) {
+        return;
+    }
+    inMotion = true
+
+    whistleText.innerText = "*Whistle*"
+    whistle.classList.add("shake-animation");
+
+    setTimeout(() => {
+        card.style.backgroundColor = "red"; //confirms card color is red
+        rightArm.style.zIndex = "-1";
+        whistle.classList.remove("shake-animation");
+        rightArm.style.transform = "rotateX(60deg)";
+        whistleText.innerText = "*Point towards the penalty marker, then take card from back-right pouch of shorts*"
+    }, 2000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-20deg)";
+        whistleText.innerText = "*Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
+    }, 5000);
+
+    setTimeout(() => {
+        card.style.visibility = "visible";
+    }, 6000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(180deg)";
+    }, 7000);
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotate(-10deg)";
+    }, 10000);
+
+    setTimeout(() => {
+        card.style.visibility = "hidden";
+    }, 11000);   
+
+    setTimeout(() => {
+        rightArm.style.transform = "rotateX(0deg)";
+        whistleText.innerText = "";
+        rightArm.style.zIndex = "0";
+        inMotion = false;
+    }, 13000);   
+}
+
 function createNewButton(id, label, reference) {
     const button = document.createElement('button');
     button.id = id;
@@ -230,9 +557,25 @@ function newSignalButtons() {
         }
         leftOrRight();
     });
-    indirect.addEventListener("click", indirectFoul);
-    penalty.addEventListener("click", penaltyKick);
-    direct.addEventListener("click", directFoul);
+
+    indirect.addEventListener("click", () => {
+        if (inMotion) {
+            return;
+        }
+        cardSelection(true)
+    });
+    penalty.addEventListener("click", () => {
+        if (inMotion) {
+            return;
+        }
+        cardSelection(null);
+    });
+    direct.addEventListener("click", () => {
+        if (inMotion) {
+            return;
+        }
+        cardSelection(false);
+    });
 }
 
 newSignalButtons();

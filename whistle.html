@@ -13,39 +13,25 @@
             <h1>Which Signal Are You Interested In</h1>
         </div>
         <div id = "buttonContainer">
-            <button id = "Advantage" class = "button">Advantage</button>
-            <button id = "Corner" class = "button">Corner Kick</button>
-            <button id = "GoalKick" class = "button">Goal Kick</button>
-            <button id = "ThrowIn" class = "button">Throw-In</button>
-            <button id = "PenaltyKick" class = "button">Penalty Kick</button>
-            <button id = "Indirect" class = "button">Indirect-Foul</button>
-            <button id = "Direct" class = "button">Direct-Foul</button>
+            <button id = "Start" class = "button">Start Game</button>
+            <button id = "Half" class = "button">Half-Time / Full-Time </button>
+            <button id = "Substitution" class = "button">Substitution</button>
+            <button id = "Foul" class = "button">Foul</button>
+            <button id = "Fight" class = "button">Contain A Possible Fight</button>
+            <button id = "Restart" class = "button">Restart Of Play</button>
         </div>
     </div>
-    <div class="referee">
-        <div id="head">
-            <div id = "whistle"></div>
-        </div>
-        <div id="body">
-          <div id="right-arm">
-          </div>
-          <div id="left-arm">
-          </div>
-          <div id="legs">
-            <div id="left-leg">
-            </div>
-            <div id="right-leg">
-            </div>
-          </div>
-          <div id="shoes">
-            <div id="left-shoe">
-            </div>
-            <div id="right-shoe">
-            </div>
-          </div>
-        </div>
+    <div id="whistle">
+    </div>     
     </div>
-    <div class ="Whistle-Text" id = "textForWhistle"></div>
+    <div>
+    <audio id="audio1" src="fulltimeWhistle.mp3" preload="auto"></audio>
+    <audio id="audio2" src="start.mp3" preload="auto"></audio>
+    <audio id="audio3" src="restart.mp3" preload="auto"></audio>
+    <audio id = "audio4" src = "foul.mp3" preload = "auto"></audio>
+    <audio id = "audio5" src = "fight.mp3" preload = "auto"></audio>
+    <audio id = "audio6" src = "substitution.mp3" preload = "auto"></audio>
+    </div>  
     <script src = whistle.js> </script>
 </body>
 </html>
