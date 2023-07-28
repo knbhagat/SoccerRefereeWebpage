@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Game Simulation
+        </title>
+        <link rel = "stylesheet" href = "simulation.css" type = "text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <a class = "startButton" id = "goBack" href = "refereeHomePage.html">Back</a>
+        <section class="header">
+            <h1>
+                Choose between Offside And Continuing Play
+            </h1>
+            <div id = "buttonContainer">
+                <button id = "offside" class = "button">
+                    Offside
+                </button>
+                <button id = "notOffside" class = "button">
+                    No Offside
+                </button>
+            </div>
+        </section>
+        <section class = "middleRow">
+            <section class = "settingBox">
+                <div class = "GetInfoBox">
+                    <h3 id = infoText >
+                        Once you click "Run", the simulation <br> will score  you on the correctiveness <br> on 10 offside  decisions. There is also <br> a difficulty button to adjust skill level <br> and a button to reset the simulation.
+                    </h3>
+                    <i class="fa fa-info-circle" id = "infoIcon" onmouseover="showInfo()" onmouseout="hideInfo()"></i>
+                </div>
+                <div id = buttonContainer2>
+                    <button id = "Run" class = "button">
+                        Run
+                    </button>
+                    <button class = "button" id = "Level">
+                        Difficulty Level
+                    </button>
+                    <button class = "button" id = "Reset">
+                        Reset
+                    </button>
+                </div>
+            </section>
+            <section class = textBox>
+
+            </section>
+            <section class = "scoreTracker">
+
+            </section>
+        </section>
+        <section class = "SoccerField">
+            <div class = "field">
+                <img src="soccerField.png" alt="Soccer Field">
+                <div class = "Player">
+                    <div id = "Passer">
+                        <div class="head">
+                        </div>
+                        <div class="body offense">
+                        <div class="right-arm">
+                        </div>
+                        <div class="left-arm">
+                        </div>
+                        <div class="legs">
+                            <div class ="left-leg">
+                            </div>
+                            <div class ="right-leg">
+                            </div>
+                        </div>
+                        <div class ="shoes">
+                            <div class = "left-shoe">
+                            </div>
+                            <div class = "right-shoe">
+                            </div>
+                            <img src = "soccerBall.png" id = "Ball">
+                        </div>
+                        </div>
+                    </div>
+                    <div id = "Offender">
+                        <div class="head">
+                        </div>
+                        <div class="body offense">
+                        <div class="right-arm">
+                        </div>
+                        <div class="left-arm">
+                        </div>
+                        <div class="legs">
+                            <div class="left-leg">
+                            </div>
+                            <div class="right-leg">
+                            </div>
+                        </div>
+                        <div class="shoes">
+                            <div class="left-shoe">
+                            </div>
+                            <div class="right-shoe">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id = "Defender">
+                        <div class="head">
+                        </div>
+                        <div class="body defense">
+                        <div class="right-arm">
+                        </div>
+                        <div class="left-arm">
+                        </div>
+                        <div class="legs">
+                            <div class="left-leg">
+                            </div>
+                            <div class="right-leg">
+                            </div>
+                        </div>
+                        <div class="shoes">
+                            <div class="left-shoe">
+                            </div>
+                            <div class="right-shoe">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src = "simulation.js">
+        </script>
+    </body>
+</html>
