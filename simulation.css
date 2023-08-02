@@ -82,6 +82,8 @@ h1 {
   .middleRow {
     height: fit-content;
     display: flex;
+    width: 100%;
+    height: 27%;
   }
 
   .settingBox {
@@ -97,8 +99,8 @@ h1 {
     display: block;
     visibility: hidden;
     position: absolute;
-    top: 12.5%;
-    left: 2.5%;
+    top: 9%;
+    left: 7%;
     box-shadow:5px 5px 20px 5px rgba(0,0,0,0.2);
     transition: opacity 1s; 
     padding: 5px;
@@ -161,6 +163,106 @@ h1 {
   #buttonContainer2 .button:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
+  }
+
+  .textBox {
+    width: 40%;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 4.5%;
+  }
+
+  .textBox button {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translateZ(0);
+    transition: filter .2s;
+    white-space: nowrap;
+    width: 100%;
+  } 
+
+  .textBox button:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .textBox button:hover {
+    filter: brightness(1.1);
+  }
+
+  .scoreTracker {
+    width: 30%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  #buttonContainer3 {
+    display: flexbox;
+    height: fit-content;
+  }
+
+  #buttonContainer3 button {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #36395A;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    justify-content: center;
+    list-style: none;
+    overflow: hidden;
+    padding: 12px 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 8px;
+    width:15px;
+    height: 15px;
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+
+  .containerRow {
+    height: fit-content;
+    padding-top: 1%;
   }
 
   .head { 
@@ -295,21 +397,18 @@ h1 {
     position: relative;
     top: 200px;
     left: 400px;
-    transition: 3s;
   }
 
   #Defender {
     position: relative;
     top: 300px;
     left: 1000px;
-    transition: 3s;
   }
 
   #Passer {
     position: relative;
     left: 200px;
     top: 600px;
-    transition: 3s;
   }
 
   .offense {

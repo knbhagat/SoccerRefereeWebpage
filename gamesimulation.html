@@ -14,14 +14,14 @@
         <a class = "startButton" id = "goBack" href = "refereeHomePage.html">Back</a>
         <section class="header">
             <h1>
-                Choose between Offside And Continuing Play
+                Choose between Offside And Onside
             </h1>
             <div id = "buttonContainer">
                 <button id = "offside" class = "button">
                     Offside
                 </button>
                 <button id = "notOffside" class = "button">
-                    No Offside
+                    Onside
                 </button>
             </div>
         </section>
@@ -29,7 +29,7 @@
             <section class = "settingBox">
                 <div class = "GetInfoBox">
                     <h3 id = infoText >
-                        Once you click "Run", the simulation <br> will score  you on the correctiveness <br> on 10 offside  decisions. There is also <br> a difficulty button to adjust skill level <br> and a button to reset the simulation.
+                        Once you click "Start Game", the simulation <br> will score  you on the correctiveness <br> on 10 offside decisions. The offside <br> decisions will simulate only after your <br> choice on Offside or Onside. Each offside <br> play will be played once you click "Run".<br> There is also  a difficulty button to adjust <br> the skill level (default level is Medium) <br> and a button to reset the simulation.
                     </h3>
                     <i class="fa fa-info-circle" id = "infoIcon" onmouseover="showInfo()" onmouseout="hideInfo()"></i>
                 </div>
@@ -45,11 +45,59 @@
                     </button>
                 </div>
             </section>
-            <section class = textBox>
-
+            <section class = "textBox">
+                <div id = buttonContainer4>
+                    <button id = "Start">
+                        Start Game
+                    </button>
+                </div>
             </section>
             <section class = "scoreTracker">
-
+                <h3 id = "scoreCounter">
+                    Score: 0
+                </h3>
+                <div id = "buttonContainer3">
+                    <div class = "containerRow">
+                        <button id = "play1">
+                            --
+                        </button>
+                        <button id = "play2">
+                            --
+                        </button>
+                    </div>
+                    <div class = "containerRow">
+                        <button id = "play3">
+                            --
+                        </button>
+                        <button id = "play4">
+                            --
+                        </button>
+                    </div>
+                    <div class = "containerRow">
+                        <button id = "play5">
+                            --
+                        </button>
+                        <button id = "play6">
+                            --
+                        </button>
+                    </div>
+                    <div class = "containerRow">
+                        <button id = "play7">
+                            --
+                        </button>
+                        <button id = "play8">
+                            --
+                        </button>
+                    </div>
+                    <div class = "containerRow">
+                        <button id = "play9">
+                            --
+                        </button>
+                        <button id = "play10">
+                            --
+                        </button>
+                    </div>
+                </div>
             </section>
         </section>
         <section class = "SoccerField">
