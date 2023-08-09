@@ -1,39 +1,107 @@
+//key features of gameplay
 const offense = document.getElementById("Offender");
 const defender = document.getElementById("Defender");
 const passer = document.getElementById("Passer");
 const soccerBall = document.getElementById("Ball");
+const offsideContainer = document.getElementById("offsideContainer");
 const buttonContainer = document.getElementById("buttonContainer2").innerHTML; //contains all the inner html
 const offsideButton = document.getElementById("offside");
 const onsideButton = document.getElementById("notOffside");
 const startButtonContainer = document.getElementById("buttonContainer4");
+const scoreCounter = document.getElementById("scoreCounter");
+//allow for game play fluidity
 var divider = 2.0;
 let inProgress = false;
-
+let counter = 1;
+let incrementer = 1;
+let flag = null; //default for flag
+let flag2 = false;
+let gameIsReset = false;
+//transitionSet
 const transitionFunctions = [transition1, transition2, transition3, transition4, transition5, transition6, transition7, transition8, transition9, transition10];
 var modifiedTransitions = [transition1, transition2, transition3, transition4, transition5, transition6, transition7, transition8, transition9, transition10]; 
 const onsideSet = [transition1, transition5, transition3, transition7, transition9];
+//allow to configure transition anonymous function
+//middleTextBox
+const wrongDecisionOffside = document.createElement("h3");
+wrongDecisionOffside.textContent = "Wrong Decision: OFFSIDE!";
+wrongDecisionOffside.classList.add("offsidePopup");
+const wrongDecisionOnside = document.createElement("h3");
+wrongDecisionOnside.textContent = "Wrong Decision: ONSIDE!";
+wrongDecisionOnside.classList.add("offsidePopup");
+const rightDecision = document.createElement("h3");
+rightDecision.textContent = "Correct Decision!";
+rightDecision.classList.add("offsidePopup");
 
-const wrongDecison = document.createElement("h3");
-wrongDecision.textContent = "AYO EPHE IS GAYYYYYY";
-
-
-
-function onside(flag) {
-    startButtonContainer.appendChild(h3Element);
+function onside() {
+    if (flag2 || gameIsReset) { // will stop offside button from being clicked
+        return;
+    }
+    flag2 = true; //what sets up the offside button not being clicked
+    // Append the appropriate message
+    if (flag) {
+        startButtonContainer.appendChild(rightDecision);
+        gameTracker(true);
+    } else {
+        startButtonContainer.appendChild(wrongDecisionOffside);
+        gameTracker(false);
+    }
     setTimeout(() => {
-        startButtonContainer.innerHTML = "";
-        inProgress = false;
-        runPlayMenu();
+        if (!gameIsReset) { //will run if game is not reset
+            startButtonContainer.innerHTML = "";
+            inProgress = false;
+            if (counter < 11) {
+                runPlayMenu();
+            } else {
+                restartMenu();
+            }
+        }
     }, 2000);
 }
 
-function offside(flag) {
-    startButtonContainer.appendChild(h3Element);
+function offside() {
+    if (flag2 || gameIsReset) { // will stop offside button from being clicked
+        return;
+    }
+    flag2 = true; //what sets up the offside button not being clicked
+
+    if (!flag) {
+        startButtonContainer.appendChild(rightDecision);
+        gameTracker(true);
+    } else {
+        startButtonContainer.appendChild(wrongDecisionOnside);
+        gameTracker(false);
+    }
     setTimeout(() => {
-        startButtonContainer.innerHTML = "";
-        inProgress = false;
-        runPlayMenu();
+        if (!gameIsReset) {
+            startButtonContainer.innerHTML = "";
+            inProgress = false;
+            if (counter < 11) {
+                runPlayMenu();
+            } else {
+                restartMenu();
+            }
+        }
     }, 2000);
+}
+
+function changeScore() {
+    scoreCounter.innerText = "Score: " + incrementer;
+    incrementer++;
+}
+
+function gameTracker(choice) {
+    let number = "play" + counter;
+    const playTracker = document.getElementById(number);
+    if (choice) {
+        playTracker.style.backgroundColor = "green";
+        playTracker.style.boxShadow = "green 0 0 0 1.5px inset, rgba(45, 150, 66, 0.4) 0 2px 4px, rgba(45, 150, 66, 0.3) 0 7px 13px -3px, green 0 -3px 0 inset";
+        changeScore();
+    } else {
+        playTracker.style.backgroundColor = "red";
+        playTracker.style.boxShadow = "red 0 0 0 1.5px inset, rgba(150, 45, 45, 0.4) 0 2px 4px, rgba(150, 45, 45, 0.3) 0 7px 13px -3px, red 0 -3px 0 inset";
+    }
+    ++counter;
 }
 
 function changeArray(array, num) { // changes array by subtracting size and returns transition
@@ -45,30 +113,25 @@ function changeArray(array, num) { // changes array by subtracting size and retu
             newArray[count++] = modifiedTransitions[i];
         }
     }
-
     modifiedTransitions = newArray;
 }
   
   // Random function that calls all the transition functions in random order
 function randomTransitions() {
-    if (modifiedTransitions.length == 0) { // keep for now
+    console.log(6);
+    if (inProgress || gameIsReset) { // keep for now
         return;
     }
-    inProgress = true;
-
+    console.log(7);
+    inProgress = true; //prevents run button from being clicked
+    flag2 = false; //allows offside button to be clicked
     var num = Math.floor(Math.random() * (modifiedTransitions.length  - 0)); //gets random number 0-9
     var transition = modifiedTransitions[num];
     changeArray(modifiedTransitions, num);
     transition();
-    var flag = onsideSet.includes(transition);
-    console.log(flag);
-
-    onsideButton.addEventListener("click", () => {
-        onside(flag)
-    });
-    offsideButton.addEventListener("click", () => {
-        offside(flag)
-    });
+    flag = onsideSet.includes(transition);
+    onsideButton.addEventListener("click", onside);
+    offsideButton.addEventListener("click", offside);
 }
 
 function showInfo() {
@@ -87,6 +150,31 @@ function createNewButton(id, label, reference) {
     button.className = reference; //class name
     button.textContent = label;
     return button;
+}
+
+function createh1Element() {
+    var score = document.createElement('h1');
+    score.innerText = scoreCounter.innerText; //takes the score
+    document.getElementById("buttonContainer4").appendChild(score);
+    score.id = "scorePopup";
+}
+
+function restartMenu() {
+    if (gameIsReset) {
+        return;
+    }
+    startButtonContainer.innerHTML = ""; //makes sure the innerHTML is erased
+    gameIsReset = true;
+    document.getElementById("buttonContainer4").appendChild(createNewButton('Start', 'Restart Game', 'button'));
+    offsideContainer.style.visibility = "hidden";
+    createh1Element();
+    scoreCounter.style.visibility = "hidden";
+    incrementer = 1;
+    counter = 1;
+    scoreCounter.innerText = "Score: 0"; //hides and changes back the increment score
+    modifiedTransitions = transitionFunctions; // resets and fulfills transitions
+    inProgress = false;
+    buttonMenu();
 }
 
 function resetMenu() {
@@ -131,29 +219,36 @@ function changeDifficulty() {
 
 function runPlayMenu() {
     startButtonContainer.innerHTML = "";
+    scoreCounter.style.visibility = "visible";
+    offsideContainer.style.visibility = "visible";
     const runPlayButton = document.getElementById("Run");
     const resetButton = document.getElementById("Reset");
+    const levelButton = document.getElementById("Level");
 
-    runPlayButton.addEventListener("click", () => {
-        if (inProgress) {
-            return;
-        }
-        randomTransitions();
-    });
-    resetButton.addEventListener("click", resetScore);
+    // Remove previous event listeners
+    // runPlayButton.removeEventListener("click", randomTransitions);
+    //resetButton.removeEventListener("click", restartMenu);
+    // levelButton.removeEventListener("click", changeDifficulty);
+
+    levelButton.addEventListener("click", changeDifficulty)
+    runPlayButton.addEventListener("click", randomTransitions);
+    resetButton.addEventListener("click", restartMenu);
 }
-
-function resetScore() {
-}
-
-
 
 function buttonMenu() {
+    console.log(5);
     const startButton = document.getElementById("Start");
     const levelButton = document.getElementById("Level");
 
     levelButton.addEventListener("click", changeDifficulty);
-    startButton.addEventListener("click", runPlayMenu);
+    startButton.addEventListener("click", () => { //change matchButtons back to default and goes to runPlayMenu
+        document.querySelectorAll("#buttonContainer3 button").forEach((button) => {
+            button.style.boxShadow = "#D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset";
+            button.style.backgroundColor = "#FCFCFD";
+        });
+        gameIsReset = false; //allows the game to run
+        runPlayMenu();
+    });
 }
 
 function transition1() {

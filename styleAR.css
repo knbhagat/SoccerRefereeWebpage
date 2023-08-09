@@ -1,34 +1,47 @@
 body {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: lightgrey;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  background-color: lightgrey;
+  width: 100%;
   }
 
   .startButton {
-    width: 30px; 
-    text-align: center;
-    font-family:sans-serif;
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 13px;
-    color: #040404;
-    background-color: #4CAF50;
-    border: none;
+    left: .75%;
+    width: 30px;
+    margin-top:3%;
+    position: relative;
+    background-color: black;
+    border: 2px solid white;
     border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: black 2px 2px 0 0;
+    color: white;
+    cursor: pointer;
+    display:inline-block;
+    font-size: 13px;
+    font-family: "JetBrains Mono",monospace;
+    padding: 12px 24px;
+    text-align: center;
     text-decoration: none;
+  }
+  
+  .startButton:hover {
+    transform: scale(1.05);
+  }
+  
+  .startButton:active {
+    box-shadow: black 2px 2px 0 0;
+    transform: translate(2px, 2px);
   }
   
   .referee {
     position: relative;
     width: 200px;
     height: 400px;
-    margin-left: auto;
-    margin-right: calc(50% - 350px); /* half width - more width */
+    right:100px;
+    top:125px;
+    transform: scale(0.9);
+    margin-bottom: 50px;
   }
   
   .head {
@@ -150,7 +163,7 @@ body {
 
   .buttons {
     position: absolute;
-    top: 15%;
+    top: 21%;
     left: 20px;
     transform: translateY(-50%);
     display: flex;
@@ -159,47 +172,75 @@ body {
   }
 
   #buttonContainer {
-    position: absolute;
-    top: 300px;
-    left: 75px;
-    transform: translateY(-50%);
+    position:relative;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    margin-top: 0;
+    bottom: 5px;
+    margin-bottom: 50px;
   }
-  
+
   .button {
-    width: 300px;
+    margin-top: 10px;
+    position:relative;
+    width: 250px;
+    border: 2px solid black;
     display: inline-block;
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: "JetBrains Mono",monospace;
     color: #fff;
     background-color: #4CAF50;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow:5px 5px 10px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
-  
-  button:hover {
-    background-color: #45a049;
+
+  .button:hover {
     transform: scale(1.05);
-  }
-  
-  button:active {
-    transform: scale(0.95);
+    background-color: #2d7f2f;
   }
 
-  .startButton:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+  .button:active {
+    transform: translate(2px, 2px);
   }
 
-  .startButton:active {
-    transform: scale(0.95);
+  .buttonHeader {
+    position:relative;
+    height: fit-content;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
   }
 
-  .button-title {
+  .homepage {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    height: fit-content;
+  }
+
+  #optionContainer {
+    top : 15px;
+    position: relative;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #interactionContainer {
+    position:relative;
+    width: 50%;
+    height: 100%;
+  }
+
+  h1 {
+    position:relative;
     background-color: #222;
     padding: 10px;
     color: #fff;
@@ -208,6 +249,16 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 2px solid #555;
+    width: 400px;
+  }
+
+  .refereeContainer {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    right:50px;
   }
 
   @keyframes shake {

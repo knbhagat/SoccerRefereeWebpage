@@ -38,6 +38,10 @@ body {
     height: fit-content;
 }
 
+#offsideContainer {
+  visibility: hidden;
+}
+
 h1 {
     font-family: 'Poppins', sans-serif;
 }
@@ -63,6 +67,11 @@ h1 {
     box-shadow:5px 5px 10px 5px rgba(0,0,0,0.2);
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.offsidePopup {
+  font-family: "JetBrains Mono",monospace;
+  font-size: 25px;
 }
 
 #buttonContainer .button:hover {
@@ -94,16 +103,17 @@ h1 {
 
   #infoText {
     background-color: white;
-    font-size: 9px;
+    font-size: 11px;
     width: fit-content;
     display: block;
     visibility: hidden;
     position: absolute;
-    top: 9%;
-    left: 7%;
+    top: 7%;
+    left: 10%;
     box-shadow:5px 5px 20px 5px rgba(0,0,0,0.2);
     transition: opacity 1s; 
     padding: 5px;
+    z-index: 2;
   }
 
   .fa {
@@ -170,13 +180,20 @@ h1 {
     justify-content: center;
     height: 100%;
     display: flex;
-    align-items: center;
-    margin-right: 4.5%;
+    margin-right: 4%;
+  }
+
+  #buttonContainer4 {
+    width: 100%;
+    height: fit-content;
+    padding-top: 5%;
+    text-align: center;
+    justify-content: center;
   }
 
   .textBox button {
     appearance: button;
-    background-color: #1899D6;
+    background-color: #4CAF50;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -199,11 +216,12 @@ h1 {
     transition: filter .2s;
     white-space: nowrap;
     width: 100%;
+    height:100%;
   } 
 
   .textBox button:after {
     background-clip: padding-box;
-    background-color: #1CB0F6;
+    background-color: #28a42a;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -218,6 +236,13 @@ h1 {
 
   .textBox button:hover {
     filter: brightness(1.1);
+  }
+
+  #scorePopup {
+    font-size: 33px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 800;
+    margin-top: 10%;
   }
 
   .scoreTracker {
@@ -254,7 +279,6 @@ h1 {
     transition: box-shadow .15s,transform .15s;
     white-space: nowrap;
     will-change: box-shadow,transform;
-    font-size: 8px;
     width:15px;
     height: 15px;
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;

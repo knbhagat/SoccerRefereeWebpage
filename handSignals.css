@@ -1,42 +1,63 @@
 body {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     height: 100vh;
     margin: 0;
     background-color: lightgrey;
+    width: 100%;
   }
 
-  #card {
-  width: 40px;
-  height: 60px;
-  background-color: yellow;
-  border: 2px solid black;
-  border-radius: 10px;
-  position: absolute;
-  left: -2px;
-  top: 130px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-}
+    #card {
+    width: 40px;
+    height: 60px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: absolute;
+    left: -2px;
+    top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+  }
+
+  .refereeContainer {
+    position: relative;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    right: 10%;
+  }
+
+  #textBox {
+    position: relative;
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    justify-content: flex-end;
+    top:10%;
+  }
 
   .Whistle-Text {
-    position: absolute;
-    font-family: "Comic Sans MS";
+    margin-top: 30%;
+    position: relative;
+    Font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+    border: 3px black hidden; /* Set border width and color */
+    padding: 10px;
     font-size: larger;
     font-weight: 800;
-    top: 200px;
-    left: 1100px;
+    text-align: center;
   }
+
   .referee {
-    position: absolute;
-    width: 200px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: calc(50% - 250px); /* half width - more width */
+    position: relative;
+    width: 70%;
+    height: 80%;
+    margin-top: 5%;
+    top: 8%;
   }
   
   #head {
@@ -140,9 +161,9 @@ body {
     background-repeat: no-repeat;
     width: 35px; /* Adjust the width as needed */
     height: 25px; /* Adjust the height as needed */
-    position: absolute;
-    left: 100px;
-    top: 60px;
+    position: relative;
+    left: 50%;
+    top: 60%;
     transform: rotateZ(40deg) rotateY(40deg) rotateX(-30deg);
   }
 
@@ -190,18 +211,17 @@ body {
   }
 
   #buttonContainer {
-    margin-top: 125px;
-    position: absolute;
-    top: -130px;
-    left: 160px;
-    transform: translateY(-50%);
+    position:relative;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    margin-top: 0;
   }
 
   h1 {
-    position:absolute;
+    position:relative;
     background-color: #222;
     padding: 10px;
     color: #fff;
@@ -210,65 +230,89 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 2px solid #555;
-    top: -300px;
-    left: 100px;
     width: 400px;
   }
-  
+
   .button {
-    width: 300px;
+    margin-top: 1%;
+    position:relative;
+    width: 250px;
+    border: 2px solid black;
     display: inline-block;
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: "JetBrains Mono",monospace;
     color: #fff;
     background-color: #4CAF50;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow:5px 5px 10px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049;
+}
+
+  .button:hover {
     transform: scale(1.05);
+    background-color: #2d7f2f;
   }
-  
-  button:active {
-    transform: scale(0.95);
+
+  .button:active {
+    transform: translate(2px, 2px);
+  }
+
+  #interactionContainer {
+    position:relative;
+    width: 45%;
+    height: 80%;
   }
 
   #optionContainer {
-    position:absolute;
-    left: -25px;
-    top: 400px;
+    top : 2%;
+    position: relative;
+    height:fit-content;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .buttonHeader {
+    position:relative;
+    height: fit-content;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+  }
+
+  .homepage {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    height: fit-content;
   }
 
   .startButton {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 30px; 
-    text-align: center;
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 13px;
-    font-family:sans-serif;
-    color: #040404;
-    background-color: #4CAF50;
-    border: none;
+    left: .75%;
+    width: 30px;
+    margin-top:3%;
+    position: relative;
+    background-color: black;
+    border: 2px solid white;
     border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: black 2px 2px 0 0;
+    color: white;
+    cursor: pointer;
+    display:inline-block;
+    font-size: 13px;
+    font-family: "JetBrains Mono",monospace;
+    padding: 12px 24px;
+    text-align: center;
     text-decoration: none;
   }
-
+  
   .startButton:hover {
-    background-color: #45a049;
     transform: scale(1.05);
   }
-
+  
   .startButton:active {
-    transform: scale(0.95);
+    box-shadow: black 2px 2px 0 0;
+    transform: translate(2px, 2px);
   }

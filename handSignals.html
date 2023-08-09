@@ -5,11 +5,12 @@
   <link rel="stylesheet" type="text/css" href="handSignals.css">
 </head>
 <body>
-    <div class = "homepage">
-        <a class = "startButton" href="refereeHomePage.html" id = "getBack">Back</a>
-    </div>
-    <div id = "optionContainer">
-        <div>
+    <section id = "interactionContainer">
+      <div class = "homepage">
+          <a class = "startButton" href="refereeHomePage.html" id = "getBack">Back</a>
+      </div>
+      <div id = "optionContainer">
+        <div class = "buttonHeader">
             <h1>Which Signal Are You Interested In</h1>
         </div>
         <div id = "buttonContainer">
@@ -21,33 +22,39 @@
             <button id = "Indirect" class = "button">Indirect-Foul</button>
             <button id = "Direct" class = "button">Direct-Foul</button>
         </div>
-    </div>
-    <div class="referee">
-        <div id="head">
-            <div id = "whistle"></div>
+      </div>
+      </section>
+      <section class = "refereeContainer">
+        <div class="referee">
+            <div id="head">
+                <div id = "whistle"></div>
+            </div>
+            <div id="body">
+              <div id="right-arm">
+                <div id = "card">
+                </div>
+              </div>
+              <div id="left-arm">
+              </div>
+              <div id="legs">
+                <div id="left-leg">
+                </div>
+                <div id="right-leg">
+                </div>
+              </div>
+              <div id="shoes">
+                <div id="left-shoe">
+                </div>
+                <div id="right-shoe">
+                </div>
+              </div>
+            </div>
         </div>
-        <div id="body">
-          <div id="right-arm">
-            <div id = "card">
-            </div>
-          </div>
-          <div id="left-arm">
-          </div>
-          <div id="legs">
-            <div id="left-leg">
-            </div>
-            <div id="right-leg">
-            </div>
-          </div>
-          <div id="shoes">
-            <div id="left-shoe">
-            </div>
-            <div id="right-shoe">
-            </div>
-          </div>
+        <div id = "textBox">
+          <h3 class ="Whistle-Text" id ="textForWhistle">
+          </h3>
         </div>
-    </div>
-    <div class ="Whistle-Text" id = "textForWhistle"></div>
+      </section>
     <script src = handSignals.js> </script>
 </body>
 </html>

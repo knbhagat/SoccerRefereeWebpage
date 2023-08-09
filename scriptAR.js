@@ -114,7 +114,6 @@ function middleSide() {
 function offsideButtons() {
     buttonCont.innerHTML = '';
     const backButton = document.getElementById("goBack");
-    buttonCont.style.marginTop = "-80px";
     backButton.removeAttribute("href");
     buttonCont.appendChild(createNewButton('nearSide', 'Near-Side', 'button'));
     buttonCont.appendChild(createNewButton('middleSide', 'Middle', 'button'));
@@ -187,7 +186,6 @@ function leftHandThrowIn() {
 function throwinButtons() {
     buttonCont.innerHTML = '';
     const backButton = document.getElementById("goBack");
-    buttonCont.style.marginTop = "-120px";
     backButton.removeAttribute("href");
     buttonCont.appendChild(createNewButton('a-advantage', 'Attackers Advantage', 'button'));
     buttonCont.appendChild(createNewButton('d-advantage', 'Defenders Advantage', 'button'));
@@ -272,7 +270,6 @@ function foulForDefender() {
 function foulButtons() {
     buttonCont.innerHTML = "";
     const backButton = document.getElementById("goBack");
-    buttonCont.style.marginTop = "-120px";
     buttonCont.appendChild(createNewButton('a-advantage', "Attackers Advantage", "button"));
     buttonCont.appendChild(createNewButton("d-advantage", "Defenders Advantage", "button"));
     const aAdvantage = document.getElementById('a-advantage');

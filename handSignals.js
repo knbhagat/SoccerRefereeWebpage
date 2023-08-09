@@ -54,8 +54,10 @@ function advantage() {
     if (inMotion) {
         return;
     }
+
     inMotion = true;
-    whistleText.innerText = "*Follow the play with your hands up until you feel that the advantage is successful where you can put your hands down*";
+    whistleText.innerText = "Follow the play with your hands up until you feel that the advantage is successful where you can put your hands down";
+    whistleText.style.borderStyle = "dashed";
     leftArm.style.transform = "rotateX(120deg)";
     rightArm.style.transform = "rotateX(120deg)";
     setTimeout(() => {
@@ -63,6 +65,7 @@ function advantage() {
         rightArm.style.transform = "rotateX(0deg)";
         inMotion = false;
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
     }, 4000);
 }
 
@@ -72,11 +75,12 @@ function goalKickSignal() {
     }
     inMotion = true;
     rightArm.style.transform = "rotateX(60deg)";
-    whistleText.innerText = "*Point in the direction of the side of the box the goal kick corresponds to*";
-
+    whistleText.innerText = "Point in the direction of the side of the box the goal kick corresponds to";
+    whistleText.style.borderStyle = "dashed";
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 3000);
 }
@@ -88,11 +92,12 @@ function leftThrow() {
 
     inMotion = true;
     leftArm.style.transform = "rotate(-135deg)";
-    whistleText.innerText = "*Dependent on the position you are in on the field. Move hand in direction towards the teams attacking side*";
-
+    whistleText.innerText = "Dependent on the position you are in on the field. Move hand in direction towards the teams attacking side";
+    whistleText.style.borderStyle = "dashed";
     setTimeout(() => {
         leftArm.style.transform = "rotate(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 3000);
 }
@@ -103,11 +108,12 @@ function rightThrow() {
     }
     inMotion = true;
     rightArm.style.transform = "rotate(135deg)";
-    whistleText.innerText = "*Dependent on the position you are in on the field. Move hand in direction towards the teams attacking side*";
-
+    whistleText.innerText = "Dependent on the position you are in on the field. Move hand in direction towards the teams attacking side";
+    whistleText.style.borderStyle = "dashed";
     setTimeout(() => {
         rightArm.style.transform = "rotate(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 3000);
 }
@@ -135,18 +141,20 @@ function penaltyKick() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(60deg)";
-        whistleText.innerText = "*Point towards the penalty marker*"
+        whistleText.innerText = "Point towards the penalty marker"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 6000);
 }
@@ -157,23 +165,25 @@ function indirectFoul() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "3px dashed black visible";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(80deg)";
-        whistleText.innerText = "*Point towards the side in which the team is attacking*"
+        whistleText.innerText = "Point towards the side in which the team is attacking"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(180deg)";
-        whistleText.innerText = "*Raise Arm until the ball is touched by another player other than the kicker*"
+        whistleText.innerText = "Raise Arm until the ball is touched by another player other than the kicker"
     }, 5000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 8000);    
 }
@@ -184,18 +194,20 @@ function directFoul() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(80deg)";
-        whistleText.innerText = "*Point towards the side in which the team is attacking*"
+        whistleText.innerText = "Point towards the side in which the team is attacking"
     }, 3000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 6000); 
 }
@@ -206,7 +218,8 @@ function directRed() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
@@ -214,12 +227,12 @@ function directRed() {
         rightArm.style.zIndex = "-1";
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(80deg)";
-        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from back-right pouch of shorts*"
+        whistleText.innerText = "Point towards the side in which the team is attacking, then take card from back-right pouch of shorts"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotate(-20deg)";
-        whistleText.innerText = "*Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
+        whistleText.innerText = "Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
     }, 5000);
 
     setTimeout(() => {
@@ -241,6 +254,7 @@ function directRed() {
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         rightArm.style.zIndex = "0";
         inMotion = false;
     }, 13000); 
@@ -252,19 +266,20 @@ function directYellow() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
         card.style.backgroundColor = "yellow"; //confirms card color is yellow
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(80deg)";
-        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from left pouch of uniform*"
+        whistleText.innerText = "Point towards the side in which the team is attacking, then take card from left pouch of uniform"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotate(-100deg)";
-        whistleText.innerText = "*Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct*"
+        whistleText.innerText = "Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct"
     }, 5000);
 
     setTimeout(() => {
@@ -286,6 +301,7 @@ function directYellow() {
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 13000); 
 }
@@ -296,7 +312,8 @@ function indirectRed() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
@@ -304,12 +321,12 @@ function indirectRed() {
         rightArm.style.zIndex = "-1";
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(80deg)";
-        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from back-right pouch of shorts*"
+        whistleText.innerText = "Point towards the side in which the team is attacking, then take card from back-right pouch of shorts"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotate(-20deg)";
-        whistleText.innerText = "*Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
+        whistleText.innerText = "Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
     }, 5000);
 
     setTimeout(() => {
@@ -330,12 +347,13 @@ function indirectRed() {
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(180deg)";
-        whistleText.innerText = "*Raise Arm until the ball is touched by another player other than the kicker*"
+        whistleText.innerText = "Raise Arm until the ball is touched by another player other than the kicker"
     }, 12000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         rightArm.style.zIndex = "0";
         inMotion = false;
     }, 15000);    
@@ -347,19 +365,20 @@ function indirectYellow() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle";
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
         card.style.backgroundColor = "yellow"; //confirms card color is yellow
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(80deg)";
-        whistleText.innerText = "*Point towards the side in which the team is attacking, then take card from left pouch of uniform*"
+        whistleText.innerText = "Point towards the side in which the team is attacking, then take card from left pouch of uniform"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotate(-100deg)";
-        whistleText.innerText = "*Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct*"
+        whistleText.innerText = "Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct"
     }, 5000);
 
     setTimeout(() => {
@@ -380,12 +399,13 @@ function indirectYellow() {
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(180deg)";
-        whistleText.innerText = "*Raise Arm until the ball is touched by another player other than the kicker*"
+        whistleText.innerText = "Raise Arm until the ball is touched by another player other than the kicker"
     }, 12000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 13000);    
 }
@@ -442,19 +462,20 @@ function penaltyYellow() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle"
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
         card.style.backgroundColor = "yellow"; //confirms card color is yellow
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(60deg)";
-        whistleText.innerText = "*Point towards the penalty marker, then take card from left pouch of uniform*"
+        whistleText.innerText = "Point towards the penalty marker, then take card from left pouch of uniform"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotate(-100deg)";
-        whistleText.innerText = "*Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct*"
+        whistleText.innerText = "Stand up straight with yellow card facing direction of player and discuss the section from the rulebook on which the yellow was given for to contain future misconduct"
     }, 5000);
 
     setTimeout(() => {
@@ -476,6 +497,7 @@ function penaltyYellow() {
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.Style = "hidden";
         inMotion = false;
     }, 12000);    
 }
@@ -486,7 +508,8 @@ function penaltyRed() {
     }
     inMotion = true
 
-    whistleText.innerText = "*Whistle*"
+    whistleText.innerText = "Whistle"
+    whistleText.style.borderStyle = "dashed";
     whistle.classList.add("shake-animation");
 
     setTimeout(() => {
@@ -494,12 +517,12 @@ function penaltyRed() {
         rightArm.style.zIndex = "-1";
         whistle.classList.remove("shake-animation");
         rightArm.style.transform = "rotateX(60deg)";
-        whistleText.innerText = "*Point towards the penalty marker, then take card from back-right pouch of shorts*"
+        whistleText.innerText = "Point towards the penalty marker, then take card from back-right pouch of shorts"
     }, 2000);
 
     setTimeout(() => {
         rightArm.style.transform = "rotate(-20deg)";
-        whistleText.innerText = "*Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
+        whistleText.innerText = "Stand up straight with red card facing direction of player and discuss the section from the rulebook on which the red was given for. Make sure player is escorted off of field before play begins";
     }, 5000);
 
     setTimeout(() => {
@@ -521,6 +544,7 @@ function penaltyRed() {
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
+        whistleText.style.borderStyle = "hidden";
         rightArm.style.zIndex = "0";
         inMotion = false;
     }, 13000);   

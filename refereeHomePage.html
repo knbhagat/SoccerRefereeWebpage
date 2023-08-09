@@ -18,31 +18,66 @@
       <div class = "nav-links" id = topLinks>
         <i class="fa fa-times" id = "close"></i> 
         <ul>
-          <li><a href = "">HOME</a></li>
-          <li><a href = "">ABOUT</a></li>
-          <li><a href = "">COURSE</a></li>
-          <li><a href = "">BLOG</a></li>
-          <li><a href = "">CONTACT</a></li>
+          <li><a onclick="scrollRefereePage()">CENTER</li>
+          <li><a onclick = "scrollAssistantRefereePage()">ASSISTANT</a></li>
+          <li><a href = "https://www.ncaa.org/sports/2013/12/2/soccer-rules-of-the-game.aspx">RULES</a></li>
+          <li><a href = "https://officialsports.com/">SHOP</a></li>
+          <li><a onclick= "showAbout()">ABOUT</a></li>
         </ul>
+      </div>
+      <div id = "popUpBox">
+        <div id = "closeContainer">
+          <i class="fa fa-times" id = "x" onclick= "hideAbout()"></i> 
+        </div>
+        <h3>
+          About Me
+        </h3>
+        <p>
+          Welcome to my refereeing page! 🏆
+        </p>
+        <p>
+          My name is Krishaan Bhagat. I am a broke student at the University of Wisconsin Madison. My journey started after playing 4 years of varsity soccer.
+        </p>
+        <p>
+          As I transitioned from playing to officiating, I have now been a part of prestigous leagues such as USL, MLS NEXT, and NISOA along with groups such as ECSR.
+        </p>
+        <p>
+          Thank you for visiting my page and being a part of my journey as a soccer referee.
+        </p>
+        <p>
+          My venmo link is below. Anything would be greatly appreciated!
+        </p>
+          <p id = "venmoLink">
+            <a href = "https://www.venmo.com/u/Krishaan-Bhagat/">
+              @Krishaan-Bhagat
+            </a>
+          </p>
       </div>
       <i class="fa fa-bars" id = "menu"></i>
     </nav>
     <div class = "text-box">
       <h1>
-        Welcome to the Referee Page!
+        Welcome To Referee Assistance!
       </h1>
-      <p>I made this page to provide help to grassroot/beginner referees on the insights of not only proper rules or calls <br> but to provide visualization on what these whistles look like
-      </p>
-      <a href = "" class = "knowledge"> Visit Us To Learn More</a>
+      <div class = "paragraphHolder">
+        <p> 
+          Our website is your ultimate destination for all things related to soccer refereeing. Whether you're a grassroot/beginner referee or a seasoned official, we've got you covered with expert insights, visualizations, and tips to enhance your skills on the field.
+          Discover the precise hand signals that convey a universal language of authority and trust between referees, players, and spectators. Immerse yourself in the world of whistle fluctuations, where each blow commands attention, shaping the dynamics of the game.
+          Step onto the pitch with confidence and make a lasting impact as a soccer referee. Let's blow the whistle and make every game a remarkable experience! ⚽️
+        </p>
+      </div>
+      <a href = "https://www.ussoccer.com/referee-program" class = "register">Click To Register As A Referee</a>
     </div>
   </section>
   <section class = "crAssistance">
     <h1>
       Center Referee Assistance
     </h1>
-    <p>
-      The center referee wields absolute authority, orchestrating the game with unwavering command, <br> and ensuring the sanctity of soccer's essence.
-    </p>
+    <div class = "condensePar">
+      <p>
+        The center referee wields absolute authority, orchestrating the game with unwavering command, and ensuring the sanctity of soccer's essence.
+      </p>
+    </div>
     <div class = "row">
       <div class = "centerRef-col">
         <img src = "handSignals.png">
@@ -60,7 +95,7 @@
         <a href = "whistle.html">
           <div class = "layer">
             <h3>
-              Whistle Flunctuations
+              Whistle Fluctuations
             </h3>
           </div>
         </a>
@@ -83,7 +118,7 @@
         <div class = "textLayer">
           <a href = "whistle.html">
             <h3>
-              Whistle Flunctuations
+              Whistle Fluctuations
             </h3>
           </a>
           <p>                       
@@ -96,9 +131,11 @@
     <h1>
       Assistant Referee Assistance
     </h1>
-    <p>
-      The assistant referee, a vital figure on the sidelines, aids the center referee by making critical offside calls <br> and signaling essential match decisions in soccer games.
-    </p>
+    <div class = "condensePar">
+      <p>
+        The assistant referee, a vital figure on the sidelines, aids the center referee by making critical offside calls and signaling essential match decisions in soccer games.
+      </p>
+    </div>
     <div class = "row">
         <div class = "assistantRef-col">
           <img src = "arWebsiteImage.png">
@@ -111,7 +148,7 @@
         </a>
         </div>
         <div class = "assistantRef-col">
-          <img src = "arWebsiteImage.png">
+          <img src = "gameSimulation.png">
           <a href = "gamesimulation.html">
           <div class = "layer">
             <h3>
@@ -149,6 +186,25 @@
       </div>
     </div>
   </section>
+  <section class = "footerContainer">
+    <div class = "footer">
+      <div class = "icons">
+        <a href = "https://www.linkedin.com/in/krishaan-bhagat"><i class = "fa fa-linkedin"></i></a>
+        <a href = "https://www.instagram.com/krishaan.bhagat/"><i class = "fa fa-instagram"></i></a>
+      </div>
+      <div class = "footerNav">
+        <a onclick = "scrollHomePage()"> Back To The Top </a>
+      </div>
+    </div>
+    <div class = "footerBot">
+      <p>
+        Copyright &copy;2023; Designed by 
+        <span class = "designor">
+           KRISHAAN BHAGAT 
+        </span> 
+      </p>
+    </div>
+  </section>
+  <script src = "homePage.js"></script>
 </body>
-<script src = "homePage.js"> </script>
 </html>
