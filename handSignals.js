@@ -3,6 +3,7 @@ const rightArm = document.getElementById("right-arm");
 const whistle = document.getElementById("whistle");
 const whistleText = document.getElementById("textForWhistle");
 const card = document.getElementById("card");
+const textBox = document.getElementById("textBox");
 let inMotion = false; //sees if another button is already in motion
 
 function backPage() {
@@ -92,11 +93,13 @@ function leftThrow() {
 
     inMotion = true;
     leftArm.style.transform = "rotate(-135deg)";
+    textBox.style.top = "275px";
     whistleText.innerText = "Dependent on the position you are in on the field. Move hand in direction towards the teams attacking side";
     whistleText.style.borderStyle = "dashed";
     setTimeout(() => {
         leftArm.style.transform = "rotate(0deg)";
         whistleText.innerText = "";
+        textBox.style.top = "180px";
         whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 3000);
@@ -497,7 +500,7 @@ function penaltyYellow() {
     setTimeout(() => {
         rightArm.style.transform = "rotateX(0deg)";
         whistleText.innerText = "";
-        whistleText.style.Style = "hidden";
+        whistleText.style.borderStyle = "hidden";
         inMotion = false;
     }, 12000);    
 }
