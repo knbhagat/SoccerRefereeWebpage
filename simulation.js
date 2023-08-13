@@ -33,6 +33,11 @@ const rightDecision = document.createElement("h3");
 rightDecision.textContent = "Correct Decision!";
 rightDecision.classList.add("offsidePopup");
 
+function closeInfo() {
+    document.getElementById("popUpBox").style.display = "none";
+    document.getElementById("blurContainer").style.filter = "none";
+}
+
 function onside() {
     if (flag2 || gameIsReset) { // will stop offside button from being clicked
         return;
