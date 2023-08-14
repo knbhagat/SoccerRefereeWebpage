@@ -16,10 +16,13 @@ function scrollAssistantRefereePage() {
 
 function showMenu() {
     navLink.style.right = "0px";
+    navLink.style.opacity = 1;
 }
 
 function hideMenu() {
     navLink.style.right = "-200px";
+    navLink.style.opacity = 0;
+
 }
 
 function hideAbout() {
