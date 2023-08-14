@@ -558,4 +558,28 @@ h1 {
       top: 0;
     }
   }
+
+  @media(max-width: 955px) {
+    #buttonContainer2 .button {
+      font-size: 11px;
+    }
+  }
+
+  @media(max-width: 775px) {
+    #buttonContainer2 .button {
+      font-size: 9px;
+    }
+  }
+
+  @media(max-width: 640px) {
+    #buttonContainer2 .button {
+      font-size: 7px;
+    }
+  }
+
+  @media(max-width: 515px) {
+    #buttonContainer2 .button {
+      font-size: 5px;
+    }
+  }
   

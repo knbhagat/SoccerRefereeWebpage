@@ -32,7 +32,7 @@ function hideAbout() {
     } else if (window.screen.width <= 700 && window.screen.height <= 700) {
         aboutBox.style.right = "-280px";
     } else {
-        aboutBox.style.top = "-350px";
+        aboutBox.style.top = "-400px";
     }
 
     aboutBox.style.opacity = 0;
