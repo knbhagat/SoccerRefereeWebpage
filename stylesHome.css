@@ -461,6 +461,21 @@ a {
 }
 
 @media(max-width: 700px) and (min-height: 701px) {
+
+  @media(max-width: 400px) {
+    .text-box {
+        top: 100px;
+        transform: translate(-50%, 0);
+    }
+  } 
+
+  @media(min-width: 401px) {
+      .text-box {
+        top: 25%;
+        transform: translate(-50%, 0);
+    }
+  }
+
   .text-box h1 {
     font-size:  22px;
   }
@@ -475,7 +490,7 @@ a {
 
   #popUpBox {
     width: 156px;
-    height: 500px;
+    height: fit-content;
     left: auto;
     right: -200px;
     top: 0px;
@@ -680,18 +695,24 @@ a {
 }
 
   @media(max-height: 700px) and (min-width: 701px) {
-
     #popUpBox {
-      height: 300px;
+      height: fit-content;
+      width: 480px;
+    }
+
+    .text-box {
+      top: 30%;
+      width: 95%;
+      transform: translate(-50%, 0);
     }
 
     .text-box h1 {
-      font-size:  18px;
+      font-size:  15px;
     }
 
     .text-box p {
-      font-size: 13px;
-      width:90%;
+      font-size: 11px;
+      width: 100%;
       margin: 0;
     }
   
@@ -880,13 +901,14 @@ a {
      }
 
      #popUpBox {
-      width: 275px;
-      height: 278px;
+      width: 235px;
+      height: fit-content;
       left: auto;
-      right: -319px;
+      right: -280px;
       top: 0px;
       transition: right 1s;
       opacity: 0;
+      padding: 0 20px;
     }
   
     #closeContainer {
@@ -902,11 +924,11 @@ a {
   
     #popUpBox p {
       margin-bottom: 5px;
-      font-size: 10px;
+      font-size: 9px;
     }
 
     #popUpBox h3 {
-      font-size: 16px;
+      font-size: 13px;
     }
 
      .text-box {

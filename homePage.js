@@ -27,7 +27,7 @@ function hideAbout() {
     if (window.screen.width <= 700 && window.screen.height > 700) { //max-width is 700px
         aboutBox.style.right = "-200px";
     } else if (window.screen.width <= 700 && window.screen.height <= 700) {
-        aboutBox.style.right = "-319px";
+        aboutBox.style.right = "-280px";
     } else {
         aboutBox.style.top = "-350px";
     }
